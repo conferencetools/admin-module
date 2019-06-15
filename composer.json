@@ -1,0 +1,17 @@
+{
+  "name": "conferencetools/admin-module",
+  "description": "Provides base admin panel functions",
+  "minimum-stability": "dev",
+  "prefer-stable": true,
+  "license": "MIT",
+  "require": {
+    "php": "~7.2",
+    "neilime/zf2-twb-bundle": "^3.0",
+    "zendframework/zend-mvc": "^3.0.1"
+  },
+  "autoload": {
+    "psr-4": {
+      "ConferenceTools\\Admin\\": "src"
+    }
+  }
+}
