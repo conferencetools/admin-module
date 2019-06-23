@@ -19,10 +19,16 @@ return [
     ],
     'view_manager' => [
         'controller_map' => [
-            'ConferenceTools\Attendance\Controller' => 'attendance',
+            'ConferenceTools\Admin\Controller' => 'admin',
         ],
         'template_map' => [
             'admin/layout' => __DIR__ . '/../view/layout.phtml',
+            'admin/index/index' => __DIR__ . '/../view/dashboard.phtml'
         ],
     ],
+    'auth' => [
+        'redirects' => [
+            'default' => 'admin',
+        ]
+    ]
 ];
