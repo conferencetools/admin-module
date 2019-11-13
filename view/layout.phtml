@@ -41,14 +41,18 @@
             <?php foreach ($container as $page):?>
                 <?php if (!empty($page->getPages())):?>
                     <div class="dash-nav-dropdown">
-                        <a href="#!" class="dash-nav-item dash-nav-dropdown-toggle">
-                            <i class="fas fa-chart-bar"></i> <?=$page->getLabel()?> </a>
-                        <div class="dash-nav-dropdown-menu">
-                            <a href="<?=$page->getHref()?>" class="dash-nav-dropdown-item"><?=$page->getLabel()?></a>
-                            <?php foreach ($page->getPages() as $childPage):?>
-                                <a href="<?=$childPage->getHref()?>" class="dash-nav-dropdown-item"><?=$childPage->getLabel()?></a>
-                            <?php endforeach;?>
-                        </div>
+                        <?php if($this->navigation()->accept($page)): ?>
+                            <a href="#!" class="dash-nav-item dash-nav-dropdown-toggle">
+                                <i class="fas fa-chart-bar"></i> <?=$page->getLabel()?> </a>
+                            <div class="dash-nav-dropdown-menu">
+                                <?php if ($page->getHref() !== ''):?>
+                                <a href="<?=$page->getHref()?>" class="dash-nav-dropdown-item"><?=$page->getLabel()?></a>
+                                <?php endif?>
+                                <?php foreach ($page->getPages() as $childPage):?>
+                                    <a href="<?=$childPage->getHref()?>" class="dash-nav-dropdown-item"><?=$childPage->getLabel()?></a>
+                                <?php endforeach;?>
+                            </div>
+                        <?php endif?>
                     </div>
                 <?php else:?>
                     <a href="<?=$page->getHref()?>" class="dash-nav-item"><?=$page->getLabel()?></a>

@@ -23,7 +23,8 @@ return [
         ],
         'template_map' => [
             'admin/layout' => __DIR__ . '/../view/layout.phtml',
-            'admin/index/index' => __DIR__ . '/../view/dashboard.phtml'
+            'admin/index/index' => __DIR__ . '/../view/dashboard.phtml',
+            'admin/form' => __DIR__ . '/../view/form.phtml',
         ],
     ],
     'auth' => [
